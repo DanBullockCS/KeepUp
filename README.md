@@ -1,2 +1,2 @@
-# KeepUp-
-An Android Game Made in Unity
+# KeepUp!
+An Android Game Made with Unity
