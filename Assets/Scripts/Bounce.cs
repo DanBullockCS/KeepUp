@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bounce : MonoBehaviour {
     private Rigidbody2D rb;
@@ -25,7 +26,7 @@ public class Bounce : MonoBehaviour {
 
         // Todo actually end the game when the ball hits the ground, for now just pause time.
         if (col.gameObject.layer == LayerMask.NameToLayer("Ground")) {
-            Time.timeScale = 0.0f;
+            SceneManager.LoadScene("EndScreen");
         }
 
         if (col.gameObject.tag.Equals("Player")) {
