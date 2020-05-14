@@ -3,8 +3,8 @@ using UnityEngine;
 using TMPro;
 
 public class DisplayScore : MonoBehaviour {
-    TMP_Text scoreText;
-    [SerializeField] TMP_Text highScoreText;
+    TMP_Text scoreText = null;
+    [SerializeField] TMP_Text highScoreText = null;
     private int score = 0;
     private int highScore = 0;
 
