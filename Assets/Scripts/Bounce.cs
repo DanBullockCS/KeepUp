@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Bounce : MonoBehaviour {
@@ -14,6 +12,7 @@ public class Bounce : MonoBehaviour {
         aSource = gameObject.GetComponent<AudioSource>();
     }
     void PlayRandom() {
+        // Play a Random paper ball audio clip
         aSource.clip = audioClips[Random.Range(0, audioClips.Length)];
         aSource.Play();
     }
@@ -21,10 +20,9 @@ public class Bounce : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D col) {
         rb.AddTorque(0.1f);
         rb.AddForce(new Vector2(0f, 1.0f));
-
         PlayRandom();
 
-        // Todo actually end the game when the ball hits the ground, for now just pause time.
+        // Game Over
         if (col.gameObject.layer == LayerMask.NameToLayer("Ground")) {
             SceneManager.LoadScene("EndScreen");
         }
