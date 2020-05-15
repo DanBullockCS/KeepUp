@@ -1,9 +1,9 @@
-﻿// TODO - Animate pictures and actually mute the sound/music
+﻿// Changes the images for the mute buttons
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MuteButtons : MonoBehaviour {
-    private int mutedSound = 0;
+    private int mutedSound = 0; // 0 meaning not muted
     private int mutedMusic = 0;
 
     public Sprite soundOnImg;

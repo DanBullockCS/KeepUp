@@ -13,8 +13,10 @@ public class Bounce : MonoBehaviour {
     }
     void PlayRandom() {
         // Play a Random paper ball audio clip
-        aSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        aSource.Play();
+        if (PlayerPrefs.GetInt("MuteSound") == 0) {
+            aSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+            aSource.Play();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
